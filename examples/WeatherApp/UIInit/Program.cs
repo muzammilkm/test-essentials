@@ -1,33 +1,31 @@
 ﻿using API;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 using System.Net;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 using TestEssentials.ToolKit.Database;
 using TestEssentials.ToolKit.Database.SqlServer;
-using TestEssentials.ToolKit.Database.SqlServer.Options;
 
-namespace TEST
+namespace UIInit
 {
-    public class TestFixture : IDisposable
+    class Program
     {
-        private readonly TestServer _server;
-        private readonly ITestDatabase _database;
+        static void Main(string[] args)
+        {
+            CreateDatabase();
 
-        #region Ctor
-        public TestFixture()
+            CreateWebHostBuilder(args).Build().Run();
+        }
+
+        public static void CreateDatabase()
         {
             var config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            _database = new DacpacTestDatabase(config.GetValue<string>("ConnectionStrings:DBConnection"))
+            var database = new DacpacTestDatabase(config.GetValue<string>("ConnectionStrings:DBConnection"))
                 .ConfigureOptions(option =>
                 {
                     var dacpacPath = Path.GetFullPath(
@@ -49,27 +47,14 @@ namespace TEST
                 .RunScriptFile(@"Scripts\add-tn-stations.sql")
                 .RunScriptFile(@"Scripts\add-ts-stations.sql");
 
-            var builder = new WebHostBuilder()
-                .UseConfiguration(config)
+        }
+
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseKestrel(o =>
+                {
+                    o.Listen(IPAddress.Loopback, 4200);
+                })
                 .UseStartup<Startup>();
-
-            _server = new TestServer(builder);
-
-            Client = _server.CreateClient();
-            Client.BaseAddress = new Uri("http://local.sandbox");
-        }
-
-        private readonly Task _serverTask;
-        #endregion
-
-        public HttpClient Client { get; }
-
-
-        public void Dispose()
-        {
-            Client.Dispose();
-            _database.Dispose();
-            _server.Dispose();
-        }
     }
 }
