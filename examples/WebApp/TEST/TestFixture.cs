@@ -17,9 +17,6 @@ namespace TEST
 {
     public class TestFixture : IDisposable
     {
-
-        private readonly CancellationTokenSource cts;
-
         private readonly TestServer _server;
         private readonly ITestDatabase _database;
 
@@ -52,26 +49,14 @@ namespace TEST
                 .RunScriptFile(@"Scripts\add-tn-stations.sql")
                 .RunScriptFile(@"Scripts\add-ts-stations.sql");
 
-            //var builder = new WebHostBuilder()
-            //    .UseConfiguration(config)
-            //    .UseStartup<Startup>();
+            var builder = new WebHostBuilder()
+                .UseConfiguration(config)
+                .UseStartup<Startup>();
 
-            var builder = WebHost.CreateDefaultBuilder().UseStartup<Startup>();
-            cts = new CancellationTokenSource();
+            _server = new TestServer(builder);
 
-            builder
-                .UseKestrel(o =>
-                {
-                    o.Listen(IPAddress.Loopback, 4200);
-                })
-                .Build()
-                .RunAsync(cts.Token);
-
-            //_serverTask.Start();
-            //_server = new TestServer(builder);
-
-            Client = new HttpClient(); //_server.CreateClient();
-            Client.BaseAddress = new Uri("http://localhost:4200");
+            Client = _server.CreateClient();
+            Client.BaseAddress = new Uri("http://local.sandbox");
         }
 
         private readonly Task _serverTask;
@@ -84,8 +69,7 @@ namespace TEST
         {
             Client.Dispose();
             _database.Dispose();
-            //_server.Dispose();
-            cts.Cancel();
+            _server.Dispose();
         }
     }
 }
