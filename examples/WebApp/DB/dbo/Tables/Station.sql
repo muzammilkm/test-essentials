@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Station]
+(
+	Id BIGINT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+	City NVARCHAR(50),
+	[State] NVARCHAR(50)
+)

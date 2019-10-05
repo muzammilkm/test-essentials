@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Muzammil Khaja Mohammed</Authors>
+    <PackageProjectUrl>https://github.com/bort-box/test-essentials</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bort-box/test-essentials</RepositoryUrl>
+    <PackageTags>Sql Server Database</PackageTags>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SqlServer.DacFx" Version="150.4534.2-preview" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestEssentials.ToolKit\TestEssentials.ToolKit.csproj" />
+  </ItemGroup>
+
+</Project>

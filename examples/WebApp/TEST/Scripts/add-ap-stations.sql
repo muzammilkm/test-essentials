@@ -1,0 +1,6 @@
+Insert Into Station VALUES('Amaravati', 'Andhra Pradesh')
+Insert Into Station VALUES('Vijayawada', 'Andhra Pradesh')
+Insert Into Station VALUES('Narasaraopet', 'Andhra Pradesh')
+Insert Into Station VALUES('Guntur', 'Andhra Pradesh')
+Insert Into Station VALUES('Machilipatnam', 'Andhra Pradesh')
+Insert Into Station VALUES('Chittoor', 'Andhra Pradesh')
