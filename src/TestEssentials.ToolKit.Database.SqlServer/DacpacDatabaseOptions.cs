@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TestEssentials.ToolKit.Database.SqlServer.Options
+namespace TestEssentials.ToolKit.Database.SqlServer
 {
     public class DacpacDatabaseOptions: ITestDatabaseOptions
     {
@@ -18,5 +18,7 @@ namespace TestEssentials.ToolKit.Database.SqlServer.Options
         public bool AlwayCreate { get; set; }
 
         public bool AlwayDrop { get; set; }
+
+        public bool AllowIncompatiblePlatform { get; set; }
     }
 }

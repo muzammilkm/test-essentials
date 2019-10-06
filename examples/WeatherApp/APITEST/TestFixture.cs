@@ -11,7 +11,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using TestEssentials.ToolKit.Database;
 using TestEssentials.ToolKit.Database.SqlServer;
-using TestEssentials.ToolKit.Database.SqlServer.Options;
 
 namespace TEST
 {
