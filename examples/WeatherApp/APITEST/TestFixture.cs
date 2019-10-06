@@ -11,7 +11,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using TestEssentials.ToolKit.Database;
 using TestEssentials.ToolKit.Database.SqlServer;
-using TestEssentials.ToolKit.Database.SqlServer.Options;
 
 namespace TEST
 {
@@ -31,7 +30,7 @@ namespace TEST
                 .ConfigureOptions(option =>
                 {
                     var dacpacPath = Path.GetFullPath(
-                                        @"..\..\..\..\..\WebApp\DB\bin\Debug\db.dacpac");
+                                        @"..\..\..\..\..\WeatherApp\DB\bin\Debug\db.dacpac");
                     option.DacpacPath = dacpacPath;
 #if DEBUG
                     option.AlwayCreate = false;
