@@ -1,16 +1,12 @@
 ﻿using API;
-using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
-using System.Net;
 using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 using TestEssentials.ToolKit.Database;
-using TestEssentials.ToolKit.Database.SqlServer;
+using TestEssentials.ToolKit.Database.Dacpac;
 
 namespace TEST
 {
@@ -58,7 +54,6 @@ namespace TEST
             Client.BaseAddress = new Uri("http://local.sandbox");
         }
 
-        private readonly Task _serverTask;
         #endregion
 
         public HttpClient Client { get; }

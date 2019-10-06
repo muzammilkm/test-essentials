@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TestEssentials.ToolKit.Database.SqlServer
+namespace TestEssentials.ToolKit.Database.Dacpac
 {
     public class DacpacDatabaseOptions: ITestDatabaseOptions
     {

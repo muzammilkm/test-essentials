@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\TestEssentials.ToolKit.Database.SqlServer\TestEssentials.ToolKit.Database.SqlServer.csproj" />
+    <ProjectReference Include="..\..\..\src\TestEssentials.ToolKit.Database.Dacpac\TestEssentials.ToolKit.Database.Dacpac.csproj" />
     <ProjectReference Include="..\..\..\src\TestEssentials.ToolKit\TestEssentials.ToolKit.csproj" />
     <ProjectReference Include="..\API\API.csproj" />
   </ItemGroup>
