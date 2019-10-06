@@ -1,10 +1,9 @@
 ﻿using Microsoft.SqlServer.Dac;
 using System;
-using TestEssentials.ToolKit.Database.SqlServer.Options;
 
 namespace TestEssentials.ToolKit.Database.SqlServer
 {
-    public class DacpacTestDatabase : SqlServerTestDatabase
+    public class DacpacTestDatabase : TestDatabase
     {
         private readonly DacpacDatabaseOptions _databaseOptions;
         private Action<DacpacDatabaseOptions> _configurationDatabaseOptions;
@@ -40,9 +39,7 @@ namespace TestEssentials.ToolKit.Database.SqlServer
             }
             var dacpacPath = _databaseOptions.DacpacPath;
             var instance = new DacServices(_dbBuilder.ConnectionString);
-
-            // AllowIncompatiblePlatform = true so we can have a database project targeting Azure SQL DB but deploy to Local DB
-            _deployOptions.AllowIncompatiblePlatform = true;
+            _deployOptions.AllowIncompatiblePlatform = _databaseOptions.AllowIncompatiblePlatform;
             using (var dacpac = DacPackage.Load(dacpacPath))
             {
                 instance.Deploy(dacpac, _dbBuilder.InitialCatalog, upgradeExisting: true, options: _deployOptions);

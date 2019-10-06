@@ -2,27 +2,26 @@
 using System.Data.SqlClient;
 using System.IO;
 using System.Text;
-using TestEssentials.ToolKit.Database.SqlServer.Options;
 
-namespace TestEssentials.ToolKit.Database.SqlServer
+namespace TestEssentials.ToolKit.Database
 {
-    public class SqlServerTestDatabase : ITestDatabase, IDisposable
+    public class TestDatabase : ITestDatabase, IDisposable
     {
-        private Action<SqlServerDatabaseOptions> _configurationDatabaseOptions;
-        private readonly SqlServerDatabaseOptions _databaseOptions;
+        private Action<TestDatabaseOptions> _configurationDatabaseOptions;
+        private readonly TestDatabaseOptions _databaseOptions;
 
         protected readonly SqlConnectionStringBuilder _dbBuilder;
         protected readonly SqlConnectionStringBuilder _masterDbBuilder;
 
         #region ctor
-        public SqlServerTestDatabase(string connectionString)
+        public TestDatabase(string connectionString)
         {
             _dbBuilder = new SqlConnectionStringBuilder(connectionString);
             _masterDbBuilder = new SqlConnectionStringBuilder(connectionString)
             {
                 InitialCatalog = "master"
             };
-            _databaseOptions = new SqlServerDatabaseOptions();
+            _databaseOptions = new TestDatabaseOptions();
         }
         #endregion
 
@@ -58,7 +57,7 @@ namespace TestEssentials.ToolKit.Database.SqlServer
             }
         }
 
-        public ITestDatabase ConfigureOptions(Action<SqlServerDatabaseOptions> configureDatabaseOptions)
+        public ITestDatabase ConfigureOptions(Action<TestDatabaseOptions> configureDatabaseOptions)
         {
             _configurationDatabaseOptions += configureDatabaseOptions;
             return this;

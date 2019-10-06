@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestEssentials.ToolKit.Database.SqlServer.Options
+namespace TestEssentials.ToolKit.Database
 {
-    public class SqlServerDatabaseOptions : ITestDatabaseOptions
+    public class TestDatabaseOptions : ITestDatabaseOptions
     {
         public bool AlwayCreate { get; set; }
 
