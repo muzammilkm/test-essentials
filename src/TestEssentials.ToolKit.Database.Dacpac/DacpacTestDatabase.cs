@@ -1,7 +1,7 @@
 ﻿using Microsoft.SqlServer.Dac;
 using System;
 
-namespace TestEssentials.ToolKit.Database.SqlServer
+namespace TestEssentials.ToolKit.Database.Dacpac
 {
     public class DacpacTestDatabase : TestDatabase
     {

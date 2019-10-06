@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.Xunit", "Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit", "TestEssentials.ToolKit\TestEssentials.ToolKit.csproj", "{20644577-16A7-475B-94FA-E7F89A7073EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.Database.SqlServer", "TestEssentials.ToolKit.Database.SqlServer\TestEssentials.ToolKit.Database.SqlServer.csproj", "{7AF8398E-A8B0-47A7-9866-1B26B3F6E9D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.Database.Dacpac", "TestEssentials.ToolKit.Database.Dacpac\TestEssentials.ToolKit.Database.Dacpac.csproj", "{75694817-4D8B-441C-9FB8-C3337D126637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{20644577-16A7-475B-94FA-E7F89A7073EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20644577-16A7-475B-94FA-E7F89A7073EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20644577-16A7-475B-94FA-E7F89A7073EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7AF8398E-A8B0-47A7-9866-1B26B3F6E9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AF8398E-A8B0-47A7-9866-1B26B3F6E9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AF8398E-A8B0-47A7-9866-1B26B3F6E9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AF8398E-A8B0-47A7-9866-1B26B3F6E9D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75694817-4D8B-441C-9FB8-C3337D126637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75694817-4D8B-441C-9FB8-C3337D126637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75694817-4D8B-441C-9FB8-C3337D126637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75694817-4D8B-441C-9FB8-C3337D126637}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

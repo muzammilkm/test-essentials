@@ -5,8 +5,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 using System.Net;
-using TestEssentials.ToolKit.Database;
-using TestEssentials.ToolKit.Database.SqlServer;
+using TestEssentials.ToolKit.Database.Dacpac;
 
 namespace UIInit
 {
