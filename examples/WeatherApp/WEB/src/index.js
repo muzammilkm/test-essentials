@@ -30,12 +30,15 @@ class WeatherApp {
         });
     }
 
-    getTempTemplate(cityName, cityTemp, cityTempDesc){
+    getTempTemplate(stateName, cityName, cityTemp, cityTempDesc){
         return `<div class="card text-white bg-dark mb-3 mr-3" style="max-width: 18rem;">
-                            <div class="card-header">${cityName}</div>
+                            <div class="card-header">
+                            <h5 class="card-title">${cityName}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">${stateName}</h6>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title text-right">${cityTemp} <span>°</span></h5>
-                                <p class="card-text">${cityTempDesc}</p>
+                                <h2 class="card-title text-center">${cityTemp} <span>°</span></h2>
+                                <p class="card-text text-center">${cityTempDesc}</p>
                             </div>
                         </div>`;
     }
@@ -43,7 +46,7 @@ class WeatherApp {
     loadCityTemp(temps) {        
         this.cityWiseTemp.innerHTML = "";
         temps.forEach(temp => {
-            const template = this.getTempTemplate(temp.City, temp.CityTemp, temp.CityTempDesc)
+            const template = this.getTempTemplate(temp.State, temp.City, temp.CityTemp, temp.CityTempDesc)
             this.cityWiseTemp.appendChild(this.elementFromTemplate(template));            
         });
     }
