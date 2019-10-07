@@ -14,6 +14,8 @@ namespace TestEssentials.ToolKit.Database.Dacpac
         public IDictionary<string, string> DeployVariables { get; set; }
 
         public string DacpacPath { get; set; }
+        
+        public bool WatchScript { get; set; }
 
         public bool AlwayCreate { get; set; }
 
