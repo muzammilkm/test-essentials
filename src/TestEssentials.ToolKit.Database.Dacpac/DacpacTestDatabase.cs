@@ -3,16 +3,14 @@ using System;
 
 namespace TestEssentials.ToolKit.Database.Dacpac
 {
-    public class DacpacTestDatabase : TestDatabase
+    public class DacpacTestDatabase : TestDatabase<DacpacDatabaseOptions>
     {
-        private readonly DacpacDatabaseOptions _databaseOptions;
         private Action<DacpacDatabaseOptions> _configurationDatabaseOptions;
 
         #region ctor
         public DacpacTestDatabase(string connectionString)
             :base(connectionString)
         {
-            _databaseOptions = new DacpacDatabaseOptions();
         }
         #endregion
 

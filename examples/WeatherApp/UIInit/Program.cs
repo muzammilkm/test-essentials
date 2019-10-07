@@ -30,6 +30,7 @@ namespace UIInit
                     var dacpacPath = Path.GetFullPath(
                                         @"..\..\..\..\..\WeatherApp\DB\bin\Debug\db.dacpac");
                     option.DacpacPath = dacpacPath;
+                    option.WatchScript = true;
 #if DEBUG
                     option.AlwayCreate = false;
                     option.AlwayDrop = false;

@@ -1,17 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Text;
 
 namespace TestEssentials.ToolKit.Database
 {
-    public class TestDatabase : ITestDatabase, IDisposable
+    public abstract class TestDatabase<TOptions> : ITestDatabase, IDisposable where TOptions : ITestDatabaseOptions, new()
     {
-        private Action<TestDatabaseOptions> _configurationDatabaseOptions;
-        private readonly TestDatabaseOptions _databaseOptions;
+        private readonly IList<string> _scriptFiles;
+        private readonly IList<FileSystemWatcher> _scriptFileWatchers;
 
+        protected readonly TOptions _databaseOptions;
         protected readonly SqlConnectionStringBuilder _dbBuilder;
         protected readonly SqlConnectionStringBuilder _masterDbBuilder;
+
 
         #region ctor
         public TestDatabase(string connectionString)
@@ -21,7 +24,9 @@ namespace TestEssentials.ToolKit.Database
             {
                 InitialCatalog = "master"
             };
-            _databaseOptions = new TestDatabaseOptions();
+            _databaseOptions = new TOptions();
+            _scriptFileWatchers = new List<FileSystemWatcher>();
+            _scriptFiles = new List<string>();
         }
         #endregion
 
@@ -57,23 +62,15 @@ namespace TestEssentials.ToolKit.Database
             }
         }
 
-        public ITestDatabase ConfigureOptions(Action<TestDatabaseOptions> configureDatabaseOptions)
+        private void RunAllScriptsAgain(object source, FileSystemEventArgs e)
         {
-            _configurationDatabaseOptions += configureDatabaseOptions;
-            return this;
+            foreach (var filename in _scriptFiles)
+            {
+                RunScript(File.ReadAllText(filename));
+            }
         }
-
-        public virtual ITestDatabase Build()
-        {
-            _configurationDatabaseOptions?.Invoke(_databaseOptions);
-
-            if (!_databaseOptions.AlwayCreate && CheckDatabaseExists())
-                return this;
-
-            Drop();
-
-            return this;
-        }
+        
+        public abstract ITestDatabase Build();
 
         /// <summary>
         /// Reads the SQL scripts.
@@ -100,6 +97,19 @@ namespace TestEssentials.ToolKit.Database
         /// <returns></returns>
         public virtual ITestDatabase RunScriptFile(string filename)
         {
+            if (_databaseOptions.WatchScript)
+            {
+                _scriptFiles.Add(filename);
+                var watcher = new FileSystemWatcher(Path.GetDirectoryName(filename))
+                {
+                    Filter = Path.GetFileName(filename),
+                    NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.Size | NotifyFilters.LastAccess,
+                    EnableRaisingEvents = true
+                };
+                watcher.Changed += RunAllScriptsAgain;
+                _scriptFileWatchers.Add(watcher);
+            }
+
             return RunScript(File.ReadAllText(filename));
         }
 
