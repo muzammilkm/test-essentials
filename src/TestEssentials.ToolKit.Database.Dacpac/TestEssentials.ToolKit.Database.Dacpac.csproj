@@ -4,8 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Muzammil Khaja Mohammed</Authors>
-    <PackageProjectUrl>https://github.com/bort-box/test-essentials</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/bort-box/test-essentials</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
     <PackageTags>Sql Server Database</PackageTags>
     <Version>1.0.0</Version>
   </PropertyGroup>

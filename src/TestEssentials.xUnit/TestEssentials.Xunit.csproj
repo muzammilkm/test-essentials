@@ -8,8 +8,8 @@
     <Company>Muzammil Khaja Mohammed</Company>
     <Product>TestEssentials.Xunit</Product>
     <Authors>Muzammil Khaja Mohammed</Authors>
-    <PackageProjectUrl>https://github.com/bort-box/test-essentials</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/bort-box/test-essentials</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
     <PackageTags>Xuint Workflow Priority Tests</PackageTags>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
