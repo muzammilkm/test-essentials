@@ -1,5 +1,6 @@
 ﻿using Microsoft.SqlServer.Dac;
 using System;
+using TestEssentials.ToolKit.Database.SqlServer;
 
 namespace TestEssentials.ToolKit.Database.Dacpac
 {

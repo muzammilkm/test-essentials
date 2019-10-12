@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TestEssentials.ToolKit.Database
+namespace TestEssentials.ToolKit.Database.SqlServer
 {
     public class SqlServerTestDatabase : TestDatabase<SqlServerDatabaseOptions>
     {

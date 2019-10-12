@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Text;
 
-namespace TestEssentials.ToolKit.Database
+namespace TestEssentials.ToolKit.Database.SqlServer
 {
     public abstract class TestDatabase<TOptions> : ITestDatabase, IDisposable where TOptions : ITestDatabaseOptions, new()
     {

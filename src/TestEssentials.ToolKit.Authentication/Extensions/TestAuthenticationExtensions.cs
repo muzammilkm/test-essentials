@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authentication;
 using TestEssentials.ToolKit.Authentication;
 
-namespace TestEssentials.ToolKit.Extensions
+namespace TestEssentials.ToolKit.Authentication.Extensions
 {
     public static class TestAuthenticationExtensions
     {

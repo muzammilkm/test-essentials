@@ -5,13 +5,14 @@
     <AssemblyName>TestEssentials.Xunit</AssemblyName>
     <RootNamespace>TestEssentials.Xunit</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Company>Muzammil Khaja Mohammed</Company>
-    <Product>TestEssentials.Xunit</Product>
     <Authors>Muzammil Khaja Mohammed</Authors>
     <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/muzammilkm/test-essentials/master/logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
     <PackageTags>Xuint Workflow Priority</PackageTags>
+    <Description>Ordering XUnit testcase based on priority.</Description>
     <IsPackable>true</IsPackable>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

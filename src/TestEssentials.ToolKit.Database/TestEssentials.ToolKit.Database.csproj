@@ -5,9 +5,11 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Muzammil Khaja Mohammed</Authors>
     <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/muzammilkm/test-essentials/master/logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
     <PackageTags>Test Database;</PackageTags>
-    <Version>1.0.0</Version>
+    <Description>Testing database.</Description>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>

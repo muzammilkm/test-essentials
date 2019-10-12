@@ -6,14 +6,14 @@ using WireMock.Settings;
 
 namespace TestEssentials.ToolKit.WireMock
 {
-    [Obsolete]
-    public class WireMockServer
+#pragma warning disable 0618
+    public class HttpMockServer
     {
-        private FluentMockServer _server;        
+        private FluentMockServer _server;
         private readonly IFluentMockServerSettings _settings;
 
         #region ctor
-        public WireMockServer(string mappingPath, int? port = null, Action<IHandlebars, IFileSystemHandler> handlebarsRegistrationCallback = null)
+        public HttpMockServer(string mappingPath, int? port = null, Action<IHandlebars, IFileSystemHandler> handlebarsRegistrationCallback = null)
         {
             _settings = new FluentMockServerSettings()
             {
