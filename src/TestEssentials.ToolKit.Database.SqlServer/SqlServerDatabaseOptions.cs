@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TestEssentials.ToolKit.Database
+﻿namespace TestEssentials.ToolKit.Database
 {
     public class SqlServerDatabaseOptions : ITestDatabaseOptions
     {

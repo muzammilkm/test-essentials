@@ -6,9 +6,10 @@ using WireMock.Settings;
 
 namespace TestEssentials.ToolKit.WireMock
 {
+    [Obsolete]
     public class WireMockServer
     {
-        private FluentMockServer _server;
+        private FluentMockServer _server;        
         private readonly IFluentMockServerSettings _settings;
 
         #region ctor

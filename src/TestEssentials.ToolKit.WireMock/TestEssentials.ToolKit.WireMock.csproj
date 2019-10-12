@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Muzammil Khaja Mohammed</Authors>
+    <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
+    <PackageTags>WireMock; Server; Proxy; Mock Http;</PackageTags>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WireMock.Net" Version="1.0.33" />
+  </ItemGroup>
+
+</Project>
