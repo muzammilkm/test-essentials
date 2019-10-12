@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.Database.Dacpac", "TestEssentials.ToolKit.Database.Dacpac\TestEssentials.ToolKit.Database.Dacpac.csproj", "{75694817-4D8B-441C-9FB8-C3337D126637}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{4D1A379D-7E53-46E0-9523-E867F0701EEC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		..\azure-pipelines.yml = ..\azure-pipelines.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

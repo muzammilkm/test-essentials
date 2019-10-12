@@ -10,7 +10,7 @@
     <Authors>Muzammil Khaja Mohammed</Authors>
     <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
     <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
-    <PackageTags>Xuint Workflow Priority Tests</PackageTags>
+    <PackageTags>Xuint Workflow Priority</PackageTags>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
