@@ -15,19 +15,26 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: Build and Release
+  displayName: Build
   inputs:
     command: 'build'
     arguments: /p:Configuration=$(buildConfiguration)
     projects: $(buildProjects)
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
+  displayName: Pack
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) # Do not run for PullRequests
   inputs:
-    command: 'pack'
+    command: pack
+    configuration: 'Release'
     packagesToPack: $(buildProjects)
-    versioningScheme: 'off'
+    nobuild: true
+    packDirectory: '$(Build.ArtifactStagingDirectory)/packages'
+    verbosityPack: 'normal'
 
 - task: NuGetCommand@2
+  displayName: Push
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) # Do not run for PullRequests
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
