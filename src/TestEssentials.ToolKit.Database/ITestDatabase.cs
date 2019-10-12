@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TestEssentials.ToolKit.Database
+﻿namespace TestEssentials.ToolKit.Database
 {
     public interface ITestDatabase
     {

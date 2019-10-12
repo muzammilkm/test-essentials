@@ -2,20 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>TestEssentials.Xunit</AssemblyName>
-    <RootNamespace>TestEssentials.Xunit</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Company>Muzammil Khaja Mohammed</Company>
-    <Product>TestEssentials.Xunit</Product>
     <Authors>Muzammil Khaja Mohammed</Authors>
     <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
     <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
-    <PackageTags>Xuint Workflow Priority</PackageTags>
-    <IsPackable>true</IsPackable>
+    <PackageTags>SQL Server Database;Testing;</PackageTags>
+    <Version>1.0.0</Version>
+    <Description>Test sql server database with plain sql scripts.</Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestEssentials.ToolKit.Database\TestEssentials.ToolKit.Database.csproj" />
   </ItemGroup>
 
 </Project>

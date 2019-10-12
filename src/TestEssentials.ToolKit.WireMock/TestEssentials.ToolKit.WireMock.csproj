@@ -2,20 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>TestEssentials.Xunit</AssemblyName>
-    <RootNamespace>TestEssentials.Xunit</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Company>Muzammil Khaja Mohammed</Company>
-    <Product>TestEssentials.Xunit</Product>
     <Authors>Muzammil Khaja Mohammed</Authors>
     <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
     <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
-    <PackageTags>Xuint Workflow Priority</PackageTags>
-    <IsPackable>true</IsPackable>
+    <PackageTags>WireMock; Server; Proxy; Mock Http;</PackageTags>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="WireMock.Net" Version="1.0.33" />
   </ItemGroup>
 
 </Project>

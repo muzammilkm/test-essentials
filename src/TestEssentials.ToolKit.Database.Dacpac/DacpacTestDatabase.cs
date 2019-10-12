@@ -29,18 +29,18 @@ namespace TestEssentials.ToolKit.Database.Dacpac
 
             Drop();
 
-            var _deployOptions = new DacDeployOptions();
+            var deployOptions = new DacDeployOptions();
 
             foreach (var variable in _databaseOptions.DeployVariables)
             {
-                _deployOptions.SqlCommandVariableValues.Add(variable.Key, variable.Value);
+                deployOptions.SqlCommandVariableValues.Add(variable.Key, variable.Value);
             }
             var dacpacPath = _databaseOptions.DacpacPath;
             var instance = new DacServices(_dbBuilder.ConnectionString);
-            _deployOptions.AllowIncompatiblePlatform = _databaseOptions.AllowIncompatiblePlatform;
+            deployOptions.AllowIncompatiblePlatform = _databaseOptions.AllowIncompatiblePlatform;
             using (var dacpac = DacPackage.Load(dacpacPath))
             {
-                instance.Deploy(dacpac, _dbBuilder.InitialCatalog, upgradeExisting: true, options: _deployOptions);
+                instance.Deploy(dacpac, _dbBuilder.InitialCatalog, upgradeExisting: true, options: deployOptions);
             }
             return this;
         }
