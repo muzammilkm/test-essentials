@@ -1,4 +1,4 @@
-﻿namespace TestEssentials.ToolKit.Database
+﻿namespace TestEssentials.ToolKit.Database.SqlServer
 {
     public class SqlServerDatabaseOptions : ITestDatabaseOptions
     {
