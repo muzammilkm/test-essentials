@@ -1,10 +1,10 @@
-# TestEssentials.ToolKit
+# TestEssentials. ToolKit
 
-TestEssentials.ToolKit are set of libraries for testing all the integrated components which includes Sql Server database, API and UI for . Net Stack.
+TestEssentials. ToolKit are set of libraries for testing all the integrated components which includes Sql Server database, API and UI for . Net Stack.
 
 ## Features
 
-* Complete Application Layers.
+* Complete Application Layers Testing.
 * Test SQL Server Database which includes Stored Procedures
 * Test Identity Authenticate
 * WireMock to Mock external api's.
@@ -41,21 +41,20 @@ For smoother development, testing & release of an application(s) test pyramid wo
     2. Using [ASP.Net Core TestServer](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.2).
     3. Using [WireMock.Net](https://github.com/WireMock-Net/WireMock.Net) to Mock external dependencies.
 
-    ![Integration Testing](integration-testing.png)
+    
+
+![Integration Testing](integration-testing.png)
 
 * E2E Testing
     1. Publish/Create brand new database with all schema & stored procedure.
     2. Running ASP.Net Core on Krestal Server
     3. Using [WireMock.Net](https://github.com/WireMock-Net/WireMock.Net) to Mock external dependencies.
 
-    ![Unit Testing](e2e-testing.png)
+    
+
+![Unit Testing](e2e-testing.png)
 
 For Implemantation details refer.
-
-* [Using TestDatabase](https://github.com/muzammilkm/test-essentials/wiki/Using-TestDatabase)
-* [Using TestAuthentication](https://github.com/muzammilkm/test-essentials/wiki/Using-TestAuthentication)
-* [Using HttpMockServer](https://github.com/muzammilkm/test-essentials/wiki/Using-HttpMockServer)
-* [Using TestServer](https://github.com/muzammilkm/test-essentials/wiki/Using-TestServer)
 
 ### Advantages
 
@@ -66,3 +65,67 @@ For Implemantation details refer.
 * Incorporate Continuous Integration / Continuous Deployment Pipeline.
 * Develop Automation Test Suit.
 * Reduce Regression Cycle.
+
+#### Using TestDatabase
+
+```c#
+ITestDatabase _database = new DacpacTestDatabase("<!-- Connection String -->")
+
+                .ConfigureOptions(option =>
+                {
+                    option.DacpacPath = Path.GetFullPath(
+                                        @"<!-- Dacpac Path -->");
+#if DEBUG
+                    option.AlwayCreate = false;
+                    option.AlwayDrop = false;
+#else
+                    option.AlwayCreate = false;
+                    option.AlwayDrop = true;
+#endif
+                })
+                .Build()
+                .RunScriptFile(@"seed-data.sql");
+
+```
+
+For more details refer: [Using TestDatabase](https://github.com/muzammilkm/test-essentials/wiki/Using-TestDatabase)
+
+#### Using TestAuthentication
+
+```c#
+public void ConfigureServices(IServiceCollection services)
+{
+    services
+        .AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = "Test Scheme";
+            options.DefaultChallengeScheme = "Test Scheme";
+        })
+        .AddTestServerAuthentication();
+}
+```
+
+For more details refer: [Using TestAuthentication](https://github.com/muzammilkm/test-essentials/wiki/Using-TestAuthentication)
+
+#### Using HttpMockServer
+
+```c#
+var ttpMockServer = new HttpMockServer(
+                Path.GetFullPath("Scripts"),
+                36987);
+httpMockServer.Start();
+```
+
+For more details refer: [Using HttpMockServer](https://github.com/muzammilkm/test-essentials/wiki/Using-HttpMockServer)
+
+#### Using TestServer
+
+```c#
+var builder = new WebHostBuilder()
+                .UseStartup<TestStartup>();
+
+var server = new TestServer(builder);
+```
+
+For more details refer: [Using TestServer](https://github.com/muzammilkm/test-essentials/wiki/Using-TestServer)
+
