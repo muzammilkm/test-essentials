@@ -32,9 +32,6 @@ namespace TestEssentials.ToolKit.Database.SqlServer
 
         protected void Drop()
         {
-            if (!_databaseOptions.AlwayDrop)
-                return;
-
             using (var connection = new SqlConnection(_masterDbBuilder.ConnectionString))
             {
                 connection.Open();
@@ -133,6 +130,9 @@ namespace TestEssentials.ToolKit.Database.SqlServer
 
         public virtual void Dispose()
         {
+            if (!_databaseOptions.AlwayDrop)
+                return;
+
             Drop();
         }
     }
