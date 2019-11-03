@@ -8,7 +8,7 @@
     <PackageIconUrl>https://raw.githubusercontent.com/muzammilkm/test-essentials/master/logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
     <PackageTags>SQL Server Database;Testing;</PackageTags>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Description>Test sql server database with plain sql scripts.</Description>
   </PropertyGroup>
 
