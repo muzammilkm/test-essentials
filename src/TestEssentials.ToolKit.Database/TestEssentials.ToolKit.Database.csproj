@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
     <PackageTags>Test Database;</PackageTags>
     <Description>Testing database.</Description>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
   </PropertyGroup>
 
 </Project>
