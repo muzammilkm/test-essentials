@@ -32,6 +32,11 @@ steps:
     nobuild: true
     packDirectory: '$(Build.ArtifactStagingDirectory)/packages'
     verbosityPack: 'normal'
+
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 5.4.0
+
 - task: NuGetCommand@2
   displayName: Push
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) # Do not run for PullRequests
