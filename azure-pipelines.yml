@@ -40,6 +40,6 @@ steps:
 - task: NuGetToolInstaller@1
   displayName: 'Install NuGet'
 
-- script: nuget push $(Build.ArtifactStagingDirectory)\$(projectName).*.nupkg -Source $(nugetSource) -ApiKey $(nuget.apikey) -SkipDuplicate -NoSymbols
+- script: nuget push $(Build.ArtifactStagingDirectory)/**/*.nupkg -Source $(nugetSource) -ApiKey $(nuget.apikey) -SkipDuplicate -NoSymbols
   displayName: 'Push to NuGet.org'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) # Do not run for PullRequests
