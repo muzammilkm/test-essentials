@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>mockserver</ToolCommandName>
+    <Version>2.2.0</Version>
+    <InformationalVersion>This is a release package</InformationalVersion>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>2.2.0.0</AssemblyVersion>
+    <Authors>Muzammil Khaja Mohammed</Authors>
+    <Company>Muzammil Khaja Mohammed</Company>
+    <Description>Command line tool using WireMock.Net to proxy http requests for mocking eternal dependecy apis.</Description>
+    <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/muzammilkm/test-essentials/master/logo.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
+    <PackageTags>Command Line; Standalone; WireMock; Server; Proxy; Mock Http;</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="TestEssentials.ToolKit" Version="1.1.0" />
+    <PackageReference Include="Topshelf" Version="4.2.1.218-develop" />
+    <PackageReference Include="WireMock.Net.StandAlone" Version="1.0.38" />
+  </ItemGroup>
+  <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.Globalization.Invariant" Value="true" />
+  </ItemGroup>
+</Project>

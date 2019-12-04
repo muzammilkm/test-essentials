@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29306.81
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.Xunit", "TestEssentials.xUnit\TestEssentials.Xunit.csproj", "{529CA711-F212-4155-BC97-9FCAAE1BE62A}"
 EndProject
@@ -13,13 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{4D1A
 		..\azure-pipelines.yml = ..\azure-pipelines.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEssentials.ToolKit.WireMock", "TestEssentials.ToolKit.WireMock\TestEssentials.ToolKit.WireMock.csproj", "{7A3C9731-A7C5-48ED-9588-C291870EC3AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.WireMock", "TestEssentials.ToolKit.WireMock\TestEssentials.ToolKit.WireMock.csproj", "{7A3C9731-A7C5-48ED-9588-C291870EC3AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEssentials.ToolKit.Authentication", "TestEssentials.ToolKit.Authentication\TestEssentials.ToolKit.Authentication.csproj", "{F7BAF637-C047-4D53-83C0-07D0DD4E5953}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.Authentication", "TestEssentials.ToolKit.Authentication\TestEssentials.ToolKit.Authentication.csproj", "{F7BAF637-C047-4D53-83C0-07D0DD4E5953}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEssentials.ToolKit.Database.SqlServer", "TestEssentials.ToolKit.Database.SqlServer\TestEssentials.ToolKit.Database.SqlServer.csproj", "{1D991D66-FD63-41A5-A5F3-1E3C1669AE24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.Database.SqlServer", "TestEssentials.ToolKit.Database.SqlServer\TestEssentials.ToolKit.Database.SqlServer.csproj", "{1D991D66-FD63-41A5-A5F3-1E3C1669AE24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEssentials.ToolKit.Database", "TestEssentials.ToolKit.Database\TestEssentials.ToolKit.Database.csproj", "{02F81584-70E1-46CC-8E2D-7E596361225E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.Database", "TestEssentials.ToolKit.Database\TestEssentials.ToolKit.Database.csproj", "{02F81584-70E1-46CC-8E2D-7E596361225E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.MockServer", "TestEssentials.ToolKit.MockServer\TestEssentials.ToolKit.MockServer.csproj", "{4B7B053E-BBE7-459E-9205-782755737556}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{02F81584-70E1-46CC-8E2D-7E596361225E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02F81584-70E1-46CC-8E2D-7E596361225E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02F81584-70E1-46CC-8E2D-7E596361225E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B7B053E-BBE7-459E-9205-782755737556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B7B053E-BBE7-459E-9205-782755737556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B7B053E-BBE7-459E-9205-782755737556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B7B053E-BBE7-459E-9205-782755737556}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
