@@ -37,12 +37,9 @@ steps:
   inputs:
     versionSpec: 5.4.0
 
-- task: NuGetCommand@2
-  displayName: Push
+- task: NuGetToolInstaller@1
+  displayName: 'Install NuGet'
+
+- script: nuget push $(Build.ArtifactStagingDirectory)\$(projectName).*.nupkg -Source $(nugetSource) -ApiKey $(nuget.apikey) -SkipDuplicate -NoSymbols
+  displayName: 'Push to NuGet.org'
   condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) # Do not run for PullRequests
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'Nuget'
-    allowPackageConflicts: true 
