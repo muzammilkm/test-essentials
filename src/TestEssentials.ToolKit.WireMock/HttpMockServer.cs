@@ -19,12 +19,18 @@ namespace TestEssentials.ToolKit.WireMock
             {
                 ReadStaticMappings = true,
                 WatchStaticMappings = true,
+                WatchStaticMappingsInSubdirectories = true,
                 AllowPartialMapping = true,
                 StartAdminInterface = true,
                 Port = port ?? 36987,
                 FileSystemHandler = new LocalFileSystemHandler(mappingPath),
                 HandlebarsRegistrationCallback = handlebarsRegistrationCallback
             };
+        }
+
+        public HttpMockServer(IFluentMockServerSettings fluentMockServerSettings)
+        {
+            _settings = fluentMockServerSettings;
         }
         #endregion
 
