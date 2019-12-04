@@ -19,9 +19,11 @@
     <PackageTags>Command Line; Standalone; WireMock; Server; Proxy; Mock Http;</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="TestEssentials.ToolKit" Version="1.1.0" />
     <PackageReference Include="Topshelf" Version="4.2.1.218-develop" />
     <PackageReference Include="WireMock.Net.StandAlone" Version="1.0.38" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestEssentials.ToolKit.WireMock\TestEssentials.ToolKit.WireMock.csproj" />
   </ItemGroup>
   <ItemGroup>
     <RuntimeHostConfigurationOption Include="System.Globalization.Invariant" Value="true" />
