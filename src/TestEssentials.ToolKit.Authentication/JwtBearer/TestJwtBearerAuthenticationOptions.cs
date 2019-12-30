@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Authentication;
 
-namespace TestEssentials.ToolKit.Authentication
+namespace TestEssentials.ToolKit.Authentication.JwtBearer
 {
-    public class TestAuthenticationOptions : AuthenticationSchemeOptions
+    public class TestJwtBearerAuthenticationOptions : AuthenticationSchemeOptions
     {
-        public TestAuthenticationOptions()
+        public TestJwtBearerAuthenticationOptions()
         {
             ClaimKeys = new List<string>();
         }

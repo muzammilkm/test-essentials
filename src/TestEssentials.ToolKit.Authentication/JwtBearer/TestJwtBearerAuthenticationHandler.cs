@@ -8,14 +8,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace TestEssentials.ToolKit.Authentication
+namespace TestEssentials.ToolKit.Authentication.JwtBearer
 {
-    public class TestAuthenticationHandler : AuthenticationHandler<TestAuthenticationOptions>
+    public class TestJwtBearerAuthenticationHandler : AuthenticationHandler<TestJwtBearerAuthenticationOptions>
     {
         private readonly ILogger _logger;
         private readonly ClaimsIdentity _claimsIdentity;
 
-        public TestAuthenticationHandler(IOptionsMonitor<TestAuthenticationOptions> options,
+        public TestJwtBearerAuthenticationHandler(IOptionsMonitor<TestJwtBearerAuthenticationOptions> options,
             ILoggerFactory logger, UrlEncoder encoder, ISystemClock clock)
             : base(options, logger, encoder, clock)
         {
@@ -36,22 +36,16 @@ namespace TestEssentials.ToolKit.Authentication
 
             var tokenDic = JsonConvert.DeserializeObject<Dictionary<string, object>>(token);
             var authenticationTicket = new AuthenticationTicket(
-                new ClaimsPrincipal(_claimsIdentity), new AuthenticationProperties(), "Test Scheme");
+                new ClaimsPrincipal(_claimsIdentity), 
+                new AuthenticationProperties(), JwtTestBearerDefaults.AuthenticationScheme);
 
             _logger.LogDebug("Adding Claims");
 
             if (Options.ClaimKeys == null || !Options.ClaimKeys.Any())
-            {
                 Options.ClaimKeys = tokenDic.Keys.ToList();
-            }
 
             foreach (var key in Options.ClaimKeys)
-            {
-                if (tokenDic.ContainsKey(key))
-                {
-                    _claimsIdentity.AddClaim(new Claim(key, tokenDic[key].ToString()));
-                }
-            }
+                _claimsIdentity.AddClaim(new Claim(key, tokenDic[key].ToString()));
 
             return Task.FromResult(AuthenticateResult.Success(authenticationTicket));
         }
