@@ -9,11 +9,16 @@
     <PackageProjectUrl>https://github.com/muzammilkm/test-essentials</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/muzammilkm/test-essentials/master/logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
-    <PackageTags>Xuint Workflow Priority</PackageTags>
+    <PackageTags>Xuint;Framework;Integration Testing;WorkFlow;Class Order;Collection Order;Case Order;Priority;Orderer;AssemblyFixture;Fixture;</PackageTags>
     <Description>Ordering XUnit testcase based on priority.</Description>
     <IsPackable>true</IsPackable>
-    <Version>1.1.0</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Orderer\WorkFlowPriorityCollectionOrderer.cs~RFaecde0c.TMP" />
+    <None Remove="Orderer\WorkFlowPriorityCollectionOrderer.cs~RFbdd0aba.TMP" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.4.1" />
