@@ -9,13 +9,13 @@ namespace TestEssentials.ToolKit.WireMock
 #pragma warning disable 0618
     public class HttpMockServer
     {
-        private FluentMockServer _server;
-        private readonly IFluentMockServerSettings _settings;
+        private WireMockServer _server;
+        private readonly WireMockServerSettings _settings;
 
         #region ctor
         public HttpMockServer(string mappingPath, int? port = null, Action<IHandlebars, IFileSystemHandler> handlebarsRegistrationCallback = null)
         {
-            _settings = new FluentMockServerSettings()
+            _settings = new WireMockServerSettings()
             {
                 ReadStaticMappings = true,
                 WatchStaticMappings = true,
@@ -28,9 +28,9 @@ namespace TestEssentials.ToolKit.WireMock
             };
         }
 
-        public HttpMockServer(IFluentMockServerSettings fluentMockServerSettings)
+        public HttpMockServer(WireMockServerSettings wireMockServerSettings)
         {
-            _settings = fluentMockServerSettings;
+            _settings = wireMockServerSettings;
         }
         #endregion
 
@@ -41,7 +41,7 @@ namespace TestEssentials.ToolKit.WireMock
         {
             if (_server != null && _server.IsStarted)
                 Stop();
-            _server = FluentMockServer.Start(_settings);
+            _server = WireMockServer.Start(_settings);
         }
 
         /// <summary>

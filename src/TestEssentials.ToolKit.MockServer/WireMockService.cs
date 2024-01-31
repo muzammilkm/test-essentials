@@ -1,7 +1,8 @@
-﻿using System;
+﻿using HandlebarsDotNet;
+using HandlebarsDotNet.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
-using TestEssentials.ToolKit.WireMock;
 using Topshelf;
 using WireMock.Handlers;
 using WireMock.Logging;
@@ -18,7 +19,7 @@ namespace TestEssentials.ToolKit.MockServer
         private readonly bool _useSsl;
         private readonly int? _port;
 
-        private FluentMockServer _server;
+        private WireMockServer _server;
         private readonly string _assemblyFile;
         private readonly string _typeName;
 
@@ -39,13 +40,13 @@ namespace TestEssentials.ToolKit.MockServer
 
             _logger.Debug("Starting...");
 
-            var handleBarTransformers = new List<IHandleBarTransformer>();
+            var handleBarTransformers = new List<IHelperDescriptor<BlockHelperOptions>>();
 
             try
-            {   
+            {
                 var currentAssembly = Assembly.LoadFrom(_assemblyFile);
                 var item = currentAssembly.GetType(_typeName);
-                handleBarTransformers.Add((IHandleBarTransformer) Activator.CreateInstance(item));
+                handleBarTransformers.Add((IHelperDescriptor<BlockHelperOptions>)Activator.CreateInstance(item));
             }
             catch (Exception ex)
             {
@@ -53,7 +54,7 @@ namespace TestEssentials.ToolKit.MockServer
             }
 
 
-            var settings = new FluentMockServerSettings()
+            var settings = new WireMockServerSettings()
             {
                 UseSSL = _useSsl,
                 Port = _port,
@@ -68,7 +69,7 @@ namespace TestEssentials.ToolKit.MockServer
                 {
                     foreach (var handleBarTransformer in handleBarTransformers)
                     {
-                        a.RegisterHelper(handleBarTransformer.Name, handleBarTransformer.Render);
+                        a.RegisterHelper(handleBarTransformer);
                     }
                 }
             };

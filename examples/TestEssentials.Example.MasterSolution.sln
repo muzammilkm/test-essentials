@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29306.81
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestEssentials.Toolkit", "TestEssentials.Toolkit", "{A6201CAC-573A-4FE7-83E5-762D03EA2317}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.Database.SqlServer", "..\src\TestEssentials.ToolKit.Database.SqlServer\TestEssentials.ToolKit.Database.SqlServer.csproj", "{EFF94FD6-6176-44B4-9E6C-C33E034F8E7A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.WireMock", "..\src\TestEssentials.ToolKit.WireMock\TestEssentials.ToolKit.WireMock.csproj", "{8E529AF2-C03D-4670-8BF3-61C15FBF3865}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.MockServer", "..\src\TestEssentials.ToolKit.MockServer\TestEssentials.ToolKit.MockServer.csproj", "{2E59E629-253E-48EC-8EB2-FCD7F1A433E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{8E529AF2-C03D-4670-8BF3-61C15FBF3865}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E529AF2-C03D-4670-8BF3-61C15FBF3865}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E529AF2-C03D-4670-8BF3-61C15FBF3865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E59E629-253E-48EC-8EB2-FCD7F1A433E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E59E629-253E-48EC-8EB2-FCD7F1A433E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E59E629-253E-48EC-8EB2-FCD7F1A433E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E59E629-253E-48EC-8EB2-FCD7F1A433E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{45E6C2EA-4139-489B-A29D-7B44D03F03D7} = {A6201CAC-573A-4FE7-83E5-762D03EA2317}
 		{EFF94FD6-6176-44B4-9E6C-C33E034F8E7A} = {A6201CAC-573A-4FE7-83E5-762D03EA2317}
 		{8E529AF2-C03D-4670-8BF3-61C15FBF3865} = {A6201CAC-573A-4FE7-83E5-762D03EA2317}
+		{2E59E629-253E-48EC-8EB2-FCD7F1A433E4} = {A6201CAC-573A-4FE7-83E5-762D03EA2317}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B092727C-C395-412F-8211-967E85CE5753}

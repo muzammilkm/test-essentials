@@ -9,11 +9,11 @@
     <RepositoryUrl>https://github.com/muzammilkm/test-essentials</RepositoryUrl>
     <PackageTags>WireMock; Server; Proxy; Mock Http;</PackageTags>
     <Description>Using WireMock.Net to proxy http requests for mocking eternal dependecy apis.</Description>
-    <Version>1.2.1</Version>
+    <Version>1.3.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WireMock.Net" Version="1.0.38" />
+    <PackageReference Include="WireMock.Net" Version="1.5.47" />
   </ItemGroup>
 
 </Project>
