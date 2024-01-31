@@ -12,7 +12,7 @@
     <PackageTags>Xuint;Framework;Integration Testing;WorkFlow;Class Order;Collection Order;Case Order;Priority;Orderer;AssemblyFixture;Fixture;</PackageTags>
     <Description>Ordering XUnit testcase based on priority.</Description>
     <IsPackable>true</IsPackable>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit" Version="2.6.6" />
   </ItemGroup>
 
 </Project>
