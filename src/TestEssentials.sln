@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.Xunit", "TestEssentials.xUnit\TestEssentials.Xunit.csproj", "{529CA711-F212-4155-BC97-9FCAAE1BE62A}"
 EndProject
@@ -20,8 +20,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.Database.SqlServer", "TestEssentials.ToolKit.Database.SqlServer\TestEssentials.ToolKit.Database.SqlServer.csproj", "{1D991D66-FD63-41A5-A5F3-1E3C1669AE24}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.Database", "TestEssentials.ToolKit.Database\TestEssentials.ToolKit.Database.csproj", "{02F81584-70E1-46CC-8E2D-7E596361225E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEssentials.ToolKit.MockServer", "TestEssentials.ToolKit.MockServer\TestEssentials.ToolKit.MockServer.csproj", "{4B7B053E-BBE7-459E-9205-782755737556}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +51,6 @@ Global
 		{02F81584-70E1-46CC-8E2D-7E596361225E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02F81584-70E1-46CC-8E2D-7E596361225E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02F81584-70E1-46CC-8E2D-7E596361225E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B7B053E-BBE7-459E-9205-782755737556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B7B053E-BBE7-459E-9205-782755737556}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B7B053E-BBE7-459E-9205-782755737556}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B7B053E-BBE7-459E-9205-782755737556}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
